@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="cAlquiler.cpp" />
     <ClCompile Include="cAutomovil.cpp" />
     <ClCompile Include="cCamioneta.cpp" />
     <ClCompile Include="cCliente.cpp" />
@@ -160,6 +161,7 @@
     <ClCompile Include="cVehiculo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="cAlquiler.h" />
     <ClInclude Include="cAutomovil.h" />
     <ClInclude Include="cCamioneta.h" />
     <ClInclude Include="cCliente.h" />

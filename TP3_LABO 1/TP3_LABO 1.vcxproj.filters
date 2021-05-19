@@ -36,6 +36,9 @@
     <ClCompile Include="cTraffic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cAlquiler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cEmpresa.h">
@@ -57,6 +60,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="cTraffic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cAlquiler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
