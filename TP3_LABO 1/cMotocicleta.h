@@ -2,10 +2,9 @@
 #include "cVehiculo.h"
 class cMotocicleta : public cVehiculo
 {
-	unsigned int Cant_cascos;
 
 public:
-	cMotocicleta(string patente_, string color_, string Num_chasis, string poliza_, float alquiler_dia, float tarifa_dia, float tarifa_Base, unsigned int cascos);
+	cMotocicleta(string patente_, string color_, string Num_chasis, string poliza_, float tarifa_dia, float tarifa_Base);
 
 	void Imprimir();
 	string To_String();

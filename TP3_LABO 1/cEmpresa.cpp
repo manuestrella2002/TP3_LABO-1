@@ -1,22 +1,24 @@
 #include "cEmpresa.h"
 
-cEmpresa::cEmpresa()
+cEmpresa::cEmpresa(string nom, string direccion_)
 {
+	Nombre = nom;
+	Direccion = direccion_;
 }
 
 cEmpresa::~cEmpresa()
 {
 }
 
-void cEmpresa::AdquirirVehiculo(cVehiculo Vehiculo)
+void cEmpresa::AdquirirVehiculo(cVehiculo* Vehiculo)
 {
 }
 
-void cEmpresa::RealizarMantenimiento(cVehiculo Vehiculo)
+void cEmpresa::RealizarMantenimiento(cVehiculo* Vehiculo)
 {
 }
 
-void cEmpresa::RetirarVehiculo(cVehiculo Vehiculo)
+void cEmpresa::RetirarVehiculo(cVehiculo* Vehiculo)
 {
 }
 

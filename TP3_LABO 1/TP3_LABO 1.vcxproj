@@ -159,6 +159,7 @@
     <ClCompile Include="cMotocicleta.cpp" />
     <ClCompile Include="cTraffic.cpp" />
     <ClCompile Include="cVehiculo.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cAlquiler.h" />
@@ -166,6 +167,7 @@
     <ClInclude Include="cCamioneta.h" />
     <ClInclude Include="cCliente.h" />
     <ClInclude Include="cEmpresa.h" />
+    <ClInclude Include="cListaT.h" />
     <ClInclude Include="cMotocicleta.h" />
     <ClInclude Include="cTraffic.h" />
     <ClInclude Include="cVehiculo.h" />
