@@ -12,6 +12,7 @@ cEmpresa::~cEmpresa()
 
 void cEmpresa::AdquirirVehiculo(cVehiculo* Vehiculo)
 {
+	ListaVehiculos->AgregarItem(Vehiculo);
 }
 
 void cEmpresa::RealizarMantenimiento(cVehiculo* Vehiculo)
