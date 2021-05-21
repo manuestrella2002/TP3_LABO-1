@@ -4,7 +4,7 @@ class cMotocicleta : public cVehiculo
 {
 
 public:
-	cMotocicleta(string patente_, string color_, string Num_chasis, string poliza_, float tarifa_dia, float tarifa_Base);
+	cMotocicleta(string patente_, string color_, string Num_chasis, string poliza_, float tarifa_dia);
 	~cMotocicleta();
 
 	void Imprimir();

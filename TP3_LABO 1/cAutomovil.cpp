@@ -1,31 +1,19 @@
 #include "cAutomovil.h"
 
-cAutomovil::cAutomovil(string patente_, string color_, string Num_chasis, string poliza_, float tarifa_dia, float tarifa_Base) : cVehiculo(patente_, color_, Num_chasis, poliza_, tarifa_dia, tarifa_Base)
+cAutomovil::cAutomovil(string patente_, string color_, string Num_chasis, string poliza_, float tarifa_dia) : cVehiculo(patente_, color_, Num_chasis, poliza_, tarifa_dia)
 {
-	Patente = patente_;
-	color = color_;
-	Nro_chasis = Num_chasis;
-	Poliza = poliza_;
-	Tarifa_por_dia = tarifa_dia;
-	Tarifa_base = tarifa_Base;
+	
+	Tarifa_base = 350;
+	Cap_pasajeros = 5;
 }
 
 cAutomovil::~cAutomovil()
 {
 }
 
-void cAutomovil::Imprimir()
-{
-}
 
-string cAutomovil::To_String()
-{
-	return string();
-}
 
-cAutomovil::~cAutomovil()
-{
-}
+
 
 void cAutomovil::Imprimir()
 {
@@ -34,9 +22,11 @@ void cAutomovil::Imprimir()
 
 string cAutomovil::To_String()
 {
+	char buffer1[80];
+	strftime(buffer1, 80, "%D", Fecha_ult_mant);
 	string cadena = "\nAUTOMOVIL:\nPatente: " + Patente + "\nCapacidad de pasajeros:" + to_string(Cap_pasajeros)
 		+ "\nColor: " + color + "\nNumero de chasis: " + Nro_chasis + "\t Poliza: " + Poliza +
-		"\nFecha de ultimo mantenimiento: " + to_string(Fecha_ult_mant.tm_wday) + "/" + to_string(Fecha_ult_mant.tm_mon) + "/" + to_string(Fecha_ult_mant.tm_year) +
+		"\nFecha de ultimo mantenimiento: " +buffer1+
 		"\nTarifa Base: " + to_string(Tarifa_base) + "\t Tarifa por dia: " + to_string(Tarifa_por_dia);
 	return cadena;
 }

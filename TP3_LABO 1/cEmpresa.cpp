@@ -10,6 +10,11 @@ cEmpresa::~cEmpresa()
 {
 }
 
+void cEmpresa::RegistrarCliente(cCliente* Cliente)
+{
+	ListaClientes->AgregarItem(Cliente);
+}
+
 void cEmpresa::AdquirirVehiculo(cVehiculo* Vehiculo)
 {
 	ListaVehiculos->AgregarItem(Vehiculo);
@@ -17,10 +22,21 @@ void cEmpresa::AdquirirVehiculo(cVehiculo* Vehiculo)
 
 void cEmpresa::RealizarMantenimiento(cVehiculo* Vehiculo)
 {
+	Vehiculo->limpio = true;
+	time_t aux = time(NULL);
+	time_t* aux1 = &aux;
+	Vehiculo->Fecha_ult_mant = localtime(aux1);
+
 }
 
 void cEmpresa::RetirarVehiculo(cVehiculo* Vehiculo)
 {
+	ListaVehiculos->Quitar(Vehiculo);
+}
+
+void cEmpresa::RegistarAlquiler(cAlquiler* Alquiler)
+{
+	ListaAlquileres->AgregarItem(Alquiler);
 }
 
 string cEmpresa::To_String()

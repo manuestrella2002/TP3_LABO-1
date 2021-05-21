@@ -23,14 +23,14 @@ public:
 	~cListaT();
 
 	bool AgregarItem(T* item);
-	bool AgregarItemOrdenado(const T* item);
+	bool AgregarItemOrdenado( T* item);
 
 	T* Quitar(string clave);
-	T* Quitar(const T* item);
+	T* Quitar( T* item);
 	T* QuitarenPos(unsigned int pos);
 
 	void Eliminar(string clave);
-	void Eliminar(const T* item);
+	void Eliminar( T* item);
 	void Eliminar(unsigned int pos);
 
 	void Listar();
@@ -114,7 +114,7 @@ bool cListaT<T>::AgregarItem(T* item)
 }
 template<class T>
 
-bool cListaT<T>::AgregarItemOrdenado(const T* item)
+bool cListaT<T>::AgregarItemOrdenado( T* item)
 {
 	/*for (unsigned int i = 0; i < CA; i++)
 	{
@@ -133,7 +133,7 @@ T* cListaT<T>::Quitar(string clave) {
 
 }
 template<class T>
-T* cListaT<T>::Quitar(const T* item) {
+T* cListaT<T>::Quitar( T* item) {
 	unsigned int pos = getItemPos(item->getclave());
 	if (pos >= CA)return NULL;
 	return QuitarenPos(pos);
@@ -167,7 +167,7 @@ void cListaT<T>::Eliminar(string clave) {
 
 }
 template<class T>
-void cListaT<T>::Eliminar(const T* item) {
+void cListaT<T>::Eliminar( T* item) {
 
 	Eliminar(item->getclave());
 }

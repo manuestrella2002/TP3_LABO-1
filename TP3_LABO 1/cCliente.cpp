@@ -10,6 +10,11 @@ cCliente::~cCliente()
 {
 }
 
+string cCliente::getclave()
+{
+	return Apellido;
+}
+
 string cCliente::To_String()
 {
 	string cadena = "\nCLIENTE: \nNombre: " + Nombre + "\nApellido: " + Apellido +
