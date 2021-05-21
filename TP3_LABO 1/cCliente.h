@@ -4,12 +4,12 @@ using namespace std;
 class cCliente
 {
 	string Apellido;
-	string DNI;
+	const string DNI;
 	string Nombre;
 
 
 public:
-	cCliente(string Nombre_, string Apellido_, string DNI);
+	cCliente(string Nombre_, string Apellido_, const string DNI_);
 	~cCliente();
 	
 	

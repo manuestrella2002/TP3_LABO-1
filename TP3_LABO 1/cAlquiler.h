@@ -21,7 +21,7 @@ public:
 	cAlquiler(cVehiculo* vehiculo_, cCliente* cliente_, tm f_inicio, tm f_final);
 	~cAlquiler();
 
-	float CalucularMonto();
+	float CalcularMonto();
 
 	string To_String();
 	void Imprimir();

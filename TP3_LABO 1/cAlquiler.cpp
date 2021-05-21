@@ -14,16 +14,21 @@ cAlquiler::~cAlquiler()
 {
 }
 
-float cAlquiler::CalucularMonto()
+float cAlquiler::CalcularMonto()
 {
 	return 0.0f;
 }
 
 string cAlquiler::To_String()
 {
-	return string();
+	string cadena = "\nALQUILER:\nTipo de vehiculo: " + Vehiculo->To_String() + "\nCliente: " + Cliente->To_String()
+		+ "\nFecha de inicio del alquiler: " + to_string(Fecha_Inicio.tm_wday) + "/" + to_string(Fecha_Inicio.tm_mon) + "/" + to_string(Fecha_Inicio.tm_year)
+		+ "\n Fecha devolucion: " + to_string(Fecha_Fin.tm_wday) + "/" + to_string(Fecha_Fin.tm_mon) + "/" + to_string(Fecha_Fin.tm_year)
+		+ "\nMonto total: " + to_string(Monto_Total);
+	return cadena;
 }
 
 void cAlquiler::Imprimir()
 {
+	cout << To_String() << endl;
 }

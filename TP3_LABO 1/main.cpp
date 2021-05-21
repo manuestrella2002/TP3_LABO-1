@@ -5,3 +5,11 @@
 #include "cListaT.h"
 #include "cMotocicleta.h"
 #include "cTraffic.h"
+
+int main()
+{
+
+
+	system("pause");
+	return 0;
+}

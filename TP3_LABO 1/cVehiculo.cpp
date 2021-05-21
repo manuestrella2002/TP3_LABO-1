@@ -9,3 +9,12 @@ cVehiculo::cVehiculo(string patente_, string color_, string Num_chasis, string p
 	Tarifa_por_dia = tarifa_dia;
 	Tarifa_base = tarifa_Base;
 }
+
+string cVehiculo::To_String()
+{
+	return string();
+}
+void cVehiculo::Imprimir()
+{
+
+}

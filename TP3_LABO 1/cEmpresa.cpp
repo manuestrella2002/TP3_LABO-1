@@ -24,9 +24,12 @@ void cEmpresa::RetirarVehiculo(cVehiculo* Vehiculo)
 
 string cEmpresa::To_String()
 {
-	return string();
+	string cadena = "\nEMPRESA:\nNombre: " + Nombre + "\Direccion: " + Direccion;
+	//las listas no porque ya se imprimen(?
+	return cadena;
 }
 
 void cEmpresa::Imprimir()
 {
+	cout << To_String() << endl;
 }

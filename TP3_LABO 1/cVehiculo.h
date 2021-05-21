@@ -16,9 +16,10 @@ protected:
 public:
 	cVehiculo(string patente_, string color_, string Num_chasis, string poliza_, float tarifa_dia,float tarifa_Base);
 
+
 	void PasosMantenimiento();
-	void Imprimir();
-	string To_String();
+	virtual void Imprimir() =0;
+	virtual string To_String() = 0;
 
 };
 
