@@ -12,7 +12,7 @@ cMotocicleta::~cMotocicleta()
 
 void cMotocicleta::Imprimir()
 {
-	cout << To_String() << endl;
+
 }
 
 string cMotocicleta::To_String()

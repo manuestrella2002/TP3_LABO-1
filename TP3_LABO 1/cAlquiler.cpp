@@ -7,20 +7,11 @@ cAlquiler::cAlquiler(cVehiculo* vehiculo_, string codigo,cCliente* cliente_, tm*
 	Fecha_Inicio = f_inicio;
 	dias_alquiler = dias_alquiler_;
 	cod = codigo;
-	Monto_Total = CalcularMonto();//FALTA HACER FUNCIO CALCULAR MONTO
 
 }
 
 cAlquiler::~cAlquiler()
 {
-}
-
-float cAlquiler::CalcularMonto()
-{
-	/*
-	V
-	*/
-	return float(0.0f);
 }
 
 string cAlquiler::getclave()

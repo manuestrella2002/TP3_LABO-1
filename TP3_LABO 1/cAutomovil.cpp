@@ -17,7 +17,7 @@ cAutomovil::~cAutomovil()
 
 void cAutomovil::Imprimir()
 {
-	cout << To_String() << endl;
+
 }
 
 string cAutomovil::To_String()

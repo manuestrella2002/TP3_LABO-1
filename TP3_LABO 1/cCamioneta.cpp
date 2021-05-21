@@ -12,7 +12,7 @@ cCamioneta::~cCamioneta()
 
 void cCamioneta::Imprimir()
 {
-	cout << To_String() << endl;
+
 }
 
 string cCamioneta::To_String()

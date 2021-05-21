@@ -7,7 +7,7 @@ cVehiculo::cVehiculo(string patente_, string color_, string Num_chasis, string p
 	Nro_chasis = Num_chasis;
 	Poliza = poliza_;
 	Tarifa_por_dia = tarifa_dia;
-	
+	 CalcularMonto();//FALTA HACER FUNCIO CALCULAR MONTO
 }
 
 cVehiculo::~cVehiculo()
@@ -27,11 +27,19 @@ void cVehiculo::PasosMantenimiento()
 	cout << "3)Revision de componentes por el mecanico" << endl;
 }
 
+void cVehiculo::CalcularMonto()
+{
+	Monto_Total = Tarifa_base + Tarifa_por_dia;
+}
+float cVehiculo::GetMontoT()
+{
+	return Monto_Total;
+}
 string cVehiculo::To_String()
 {
 	return string();
 }
 void cVehiculo::Imprimir()
 {
-
+	cout << To_String() << endl;
 }

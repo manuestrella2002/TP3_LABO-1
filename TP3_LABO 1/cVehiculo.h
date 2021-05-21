@@ -14,13 +14,17 @@ protected:
 	float Tarifa_por_dia;
 	float Tarifa_base;
 	bool limpio;
+	float Monto_Total;
+
 public:
 	cVehiculo(string patente_, string color_, string Num_chasis, string poliza_, float tarifa_dia);
 	~cVehiculo();
 	string getclave();
 
 	void PasosMantenimiento();
-	virtual void Imprimir() = 0;
+	void CalcularMonto();
+	float GetMontoT();
+	virtual void Imprimir();
 	virtual string To_String() = 0;
 
 	friend class cEmpresa;
