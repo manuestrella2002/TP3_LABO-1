@@ -15,13 +15,14 @@ class cAlquiler
 	tm* Fecha_Inicio;
 	cVehiculo* Vehiculo;
 	string cod;
+	float Monto_Total;
 	
 public:
 	cAlquiler(cVehiculo* vehiculo_, string codigo,cCliente* cliente_, tm* f_inicio, unsigned int dias_alquiler_);
 	~cAlquiler();
 
 	string getclave();
-	
+	float CalularMonto();
 	string To_String();
 
 	void Imprimir();

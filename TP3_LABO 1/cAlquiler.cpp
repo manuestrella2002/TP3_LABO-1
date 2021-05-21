@@ -7,7 +7,11 @@ cAlquiler::cAlquiler(cVehiculo* vehiculo_, string codigo,cCliente* cliente_, tm*
 	Fecha_Inicio = f_inicio;
 	dias_alquiler = dias_alquiler_;
 	cod = codigo;
-
+	//precios de cada adicional que se usa
+	precio_ar = 20;
+	precio_cascos = 15;
+	precio_portaequipaje = 30;
+	precio_ss = 50;
 }
 
 cAlquiler::~cAlquiler()
@@ -17,6 +21,16 @@ cAlquiler::~cAlquiler()
 string cAlquiler::getclave()
 {
 	return cod;
+}
+
+float cAlquiler::CalularMonto()
+{
+	//tendriamos que hacer el dynamic cast, y en cada caso ver que auxiliar usa para calcular 
+	//el monto final de cada vehiculo en especifico + el monto del adicional
+	//eso multiplicado los dias de alquiler
+	//(Vehiculoespecifico).Getmonto() + tarifadicional
+	//ya tenemos una tarifa por dia en vehiculo, no se como usar ambas 
+	return 0.0f;
 }
 
 string cAlquiler::To_String()

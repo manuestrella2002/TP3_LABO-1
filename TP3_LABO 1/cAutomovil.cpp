@@ -1,25 +1,22 @@
 #include "cAutomovil.h"
 
-cAutomovil::cAutomovil(string patente_, string color_, string Num_chasis, string poliza_, float tarifa_dia) : cVehiculo(patente_, color_, Num_chasis, poliza_, tarifa_dia)
+cAutomovil::cAutomovil(string patente_, string color_, string Num_chasis, string poliza_, float tarifa_dia, int sillas_) : cVehiculo(patente_, color_, Num_chasis, poliza_, tarifa_dia)
 {
-	
+	sillas_seguridad = sillas_;
 	Tarifa_base = 350;
 	Cap_pasajeros = 5;
 }
-
 cAutomovil::~cAutomovil()
 {
 }
-
-
-
-
-
+int cAutomovil::Get_sillas()
+{
+	return sillas_seguridad;
+}
 void cAutomovil::Imprimir()
 {
 
 }
-
 string cAutomovil::To_String()
 {
 	char buffer1[80];

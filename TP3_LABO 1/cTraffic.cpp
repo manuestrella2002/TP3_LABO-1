@@ -1,13 +1,25 @@
 #include "cTraffic.h"
 
-cTraffic::cTraffic(string patente_, string color_, string Num_chasis, string poliza_, float tarifa_dia) : cVehiculo(patente_, color_, Num_chasis, poliza_,tarifa_dia)
+cTraffic::cTraffic(string patente_, string color_, string Num_chasis, string poliza_, float tarifa_dia, int sillas_, int asientos_) : cVehiculo(patente_, color_, Num_chasis, poliza_,tarifa_dia)
 {
+	sillas_seguridad = sillas_;
+	asiento_auxiliar = asientos_;
 	Tarifa_base = 500;
 	Cap_pasajeros = 8;
 }
 
 cTraffic::~cTraffic()
 {
+}
+
+int cTraffic::GetSillas()
+{
+	return sillas_seguridad;
+}
+
+int cTraffic::GetAsientos()
+{
+	return asiento_auxiliar;
 }
 
 string cTraffic::To_String()
