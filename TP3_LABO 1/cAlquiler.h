@@ -12,8 +12,8 @@ class cAlquiler
 	unsigned int Cant_portaequipaje;
 	unsigned int Cant_silla_seguridad;
 	cCliente* Cliente;
-	tm Fecha_Fin;
-	tm Fecha_Inicio;
+	tm* Fecha_Fin;
+	tm* Fecha_Inicio;
 	float Monto_Total;
 	cVehiculo* Vehiculo;
 

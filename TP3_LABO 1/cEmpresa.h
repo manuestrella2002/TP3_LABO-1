@@ -1,5 +1,4 @@
 #pragma once
-#include"cAlquiler.h"
 #include "cListaT.h"
 
 class cEmpresa
