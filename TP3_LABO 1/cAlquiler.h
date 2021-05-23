@@ -3,8 +3,13 @@
 #include<string>
 #include"cCliente.h"
 #include <ctime>
-#include "cVehiculo.h"
+#include"cAutomovil.h"
+#include"cCamioneta.h"
+#include"cMotocicleta.h"
+#include"cTraffic.h"
 using namespace std;
+template<class cAlquiler>class cListaT;
+
 class cAlquiler
 {
 	unsigned int Cant_asiento_rebatible, Cant_cascos, Cant_portaequipaje,  Cant_silla_seguridad, dias_alquiler;

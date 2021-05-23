@@ -1,10 +1,10 @@
 #include "cMotocicleta.h"
 
-cMotocicleta::cMotocicleta(string patente_, string color_, string Num_chasis, string poliza_, float tarifa_dia, int cascos_) : cVehiculo(patente_, color_, Num_chasis, poliza_, tarifa_dia)
+cMotocicleta::cMotocicleta(string patente_, string color_, string Num_chasis, string poliza_, int cascos_) : cVehiculo(patente_, color_, Num_chasis, poliza_)
 {
 	Cascos = cascos_;
-	Tarifa_base = 150;
 	Cap_pasajeros = 2;
+	Tarifa_por_dia = 75;
 }
 
 cMotocicleta::~cMotocicleta()
@@ -18,7 +18,7 @@ int cMotocicleta::GetCascos()
 
 void cMotocicleta::Imprimir()
 {
-
+	
 }
 
 string cMotocicleta::To_String()

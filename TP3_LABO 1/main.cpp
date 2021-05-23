@@ -3,7 +3,7 @@
 #include "cEmpresa.h"
 #include "cMotocicleta.h"
 #include "cTraffic.h"
-
+#include"stdlib.h"
 
 
 int main()
@@ -17,19 +17,23 @@ int main()
 	//agregue de los accesorios a los constructores
 	cCliente* Cliente1 = new cCliente("Juan", "Estrella", "43624137");
 	cCliente* Cliente2 = new cCliente("Delfina", "Colombo", "42674137");
-	cAutomovil* Auto1 = new cAutomovil("ABD385", "Rojo", "AD1274578", "458687", 500,1);
-	cAutomovil* Auto2 = new cAutomovil("DND385", "Verde", "ACD74578", "48958687", 250,0);
-	cCamioneta* Camioneta1 = new cCamioneta("ART187", "Azul", "fr17556", "1896187", 750,2,1);
-	cTraffic* Traffic1 = new cTraffic("FTP896", "Naranja", "YT17556", "87412", 650,2,0);
-	cMotocicleta* Moto1 = new cMotocicleta("FTP896", "Naranja", "YT17556", "87412", 150,1);
+	cAutomovil* Auto1 = new cAutomovil("ABD385", "Rojo", "AD1274578", "458687",1);
+	cAutomovil* Auto2 = new cAutomovil("DND385", "Verde", "ACD74578", "48958687",0);
+	cCamioneta* Camioneta1 = new cCamioneta("ART187", "Azul", "fr17556", "1896187",2,1);
+	cTraffic* Traffic1 = new cTraffic("FTP896", "Naranja", "YT17556", "87412",2,0);
+	cMotocicleta* Moto1 = new cMotocicleta("FTP896", "Naranja", "YT17556", "87412",1);
 	cAlquiler* Alquiler1 = new cAlquiler(Auto1, "101", Cliente1,aux_dia, 5);//HACER SUMA DE DIAS DE ALQUILER PARA OBTENER FECHA FINAL
-
-	Empresa->AdquirirVehiculo(Auto1);
-	Empresa->RegistrarCliente(Cliente1);
-	Empresa->RegistarAlquiler(Alquiler1);
-	Empresa->RealizarMantenimiento(Auto1);
+	cAlquiler* Alquiler2 = new cAlquiler(Camioneta1, "102", Cliente2, aux_dia, 2);
+	//Empresa->AdquirirVehiculo(Auto1);
+	//Empresa->RegistrarCliente(Cliente1);
+	//Empresa->RegistarAlquiler(Alquiler1);
+	//Empresa->RealizarMantenimiento(Auto1);
+	
 	Auto1->Imprimir();
+	Camioneta1->Imprimir();
+	Traffic1->Imprimir();
+	Moto1->Imprimir();
 
-
+	system("Pause");
 	return 0;
 }

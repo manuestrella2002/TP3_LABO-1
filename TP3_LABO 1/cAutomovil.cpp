@@ -1,10 +1,10 @@
 #include "cAutomovil.h"
 
-cAutomovil::cAutomovil(string patente_, string color_, string Num_chasis, string poliza_, float tarifa_dia, int sillas_) : cVehiculo(patente_, color_, Num_chasis, poliza_, tarifa_dia)
+cAutomovil::cAutomovil(string patente_, string color_, string Num_chasis, string poliza_, int sillas_) : cVehiculo(patente_, color_, Num_chasis, poliza_)
 {
 	sillas_seguridad = sillas_;
-	Tarifa_base = 350;
 	Cap_pasajeros = 5;
+	Tarifa_por_dia = 200;
 }
 cAutomovil::~cAutomovil()
 {

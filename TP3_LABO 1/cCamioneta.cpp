@@ -1,11 +1,11 @@
 #include "cCamioneta.h"
 
-cCamioneta::cCamioneta(string patente_, string color_, string Num_chasis, string poliza_, float tarifa_dia, int sillas_, int portaeq_) : cVehiculo(patente_, color_, Num_chasis, poliza_, tarifa_dia)
+cCamioneta::cCamioneta(string patente_, string color_, string Num_chasis, string poliza_, int sillas_, int portaeq_) : cVehiculo(patente_, color_, Num_chasis, poliza_)
 {
 	sillas_seguridad = sillas_;
 	portaequipaje = portaeq_;
-	Tarifa_base = 800;
 	Cap_pasajeros = 5;
+	Tarifa_por_dia = 150;
 }
 
 cCamioneta::~cCamioneta()

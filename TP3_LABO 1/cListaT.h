@@ -1,14 +1,12 @@
 #pragma once
-#define NMAX 10
+#define NMAX 150
 
 #include <string>
-#include "cAlquiler.h"
+#include "cEmpresa.h"
 
 using namespace std;
 
-class cAlquiler;
-class cVehiculo;
-class cCliente;
+
 template<class T>
 class cListaT
 {
@@ -41,6 +39,10 @@ public:
 
 	unsigned int getCA();
 	unsigned int getTAM();
+
+	T* operator[](int pos);
+	void operator << (T* item);
+	void operator + (T* item);
 };
 
 template<class T>
@@ -214,8 +216,24 @@ unsigned int cListaT<T>::getItemPos(string clave)
 
 	return INT_MAX;
 }
+template <class T>
+T* cListaT<T>::operator[](int pos)
+{
+	if (pos < CA)
+		return vector[pos];
+	else return NULL;
 
+}
 
+template<class T>
+inline void cListaT<T>::operator<<(T* item)
+{
+	Eliminar(item->getNombre());
+}
 
-
+template<class T>
+inline void cListaT<T>::operator+(T* item)
+{
+	Agregar(item);
+}
 

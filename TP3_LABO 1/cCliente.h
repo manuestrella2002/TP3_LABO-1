@@ -1,6 +1,8 @@
 #pragma once
 #include<iostream>
 using namespace std;
+template<class cCliente>class cListaT;
+
 class cCliente
 {
 	string Apellido;

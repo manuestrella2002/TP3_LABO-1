@@ -12,6 +12,8 @@ cAlquiler::cAlquiler(cVehiculo* vehiculo_, string codigo,cCliente* cliente_, tm*
 	precio_cascos = 15;
 	precio_portaequipaje = 30;
 	precio_ss = 50;
+	Monto_Total = CalularMonto();
+
 }
 
 cAlquiler::~cAlquiler()
@@ -30,7 +32,26 @@ float cAlquiler::CalularMonto()
 	//eso multiplicado los dias de alquiler
 	//(Vehiculoespecifico).Getmonto() + tarifadicional
 	//ya tenemos una tarifa por dia en vehiculo, no se como usar ambas 
-	return 0.0f;
+		if (cAutomovil* Auto = dynamic_cast<cAutomovil*>(Vehiculo))
+		{ 
+			return (Auto->Tarifa_base)+Auto->Tarifa_por_dia*dias_alquiler + precio_ss * Auto->sillas_seguridad * dias_alquiler;
+		}
+		else if (cCamioneta* Camioneta = dynamic_cast<cCamioneta*>(Vehiculo))
+		{ 
+			return (Camioneta->Tarifa_base) + Camioneta->Tarifa_por_dia * dias_alquiler + precio_ss * Camioneta->sillas_seguridad * dias_alquiler+ precio_portaequipaje*Camioneta->portaequipaje*dias_alquiler;
+		}
+		else if (cTraffic* Traffic = dynamic_cast<cTraffic*>(Vehiculo))
+		{
+			return (Traffic->Tarifa_base) + Traffic->Tarifa_por_dia * dias_alquiler + precio_ss * Cant_silla_seguridad * dias_alquiler;
+
+		}
+		else if (cMotocicleta* Moto = dynamic_cast<cMotocicleta*>(Vehiculo))
+		{
+			return (Moto->Tarifa_base) + Moto->Tarifa_por_dia * dias_alquiler + precio_ss * Cant_silla_seguridad * dias_alquiler;
+
+		}
+	
+	return 0;
 }
 
 string cAlquiler::To_String()

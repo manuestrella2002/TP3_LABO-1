@@ -6,7 +6,7 @@ class cTraffic : public cVehiculo
 	int asiento_auxiliar;
 public:
 
-	cTraffic(string patente_, string color_, string Num_chasis, string poliza_, float tarifa_dia, int sillas_, int asientos_);
+	cTraffic(string patente_, string color_, string Num_chasis, string poliza_, int sillas_, int asientos_);
 	~cTraffic();
 
 	int GetSillas();
@@ -14,6 +14,6 @@ public:
 	string To_String();
 	void Imprimir();
 
+	friend class cAlquiler;
 
 };
-

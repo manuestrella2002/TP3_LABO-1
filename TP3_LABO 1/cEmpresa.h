@@ -1,6 +1,11 @@
 #pragma once
 #include "cListaT.h"
+#include"cAlquiler.h"
+#include"cVehiculo.h"
+#include"cCliente.h"
+#include<string>
 
+using namespace std;
 class cEmpresa
 {
 	
