@@ -12,6 +12,7 @@ template<class cAlquiler>class cListaT;
 
 class cAlquiler
 {
+protected:
 	unsigned int Cant_asiento_rebatible, Cant_cascos, Cant_portaequipaje,  Cant_silla_seguridad, dias_alquiler;
 	float precio_ar, precio_cascos, precio_portaequipaje, precio_ss;
 	float MontoTotal;
@@ -25,12 +26,17 @@ class cAlquiler
 public:
 	cAlquiler(cVehiculo* vehiculo_, string codigo,cCliente* cliente_, tm* f_inicio, unsigned int dias_alquiler_);
 	~cAlquiler();
+	
 
 	string getclave();
 	float CalularMonto();
 	string To_String();
 
+	void CalcularFechaFin();
+
 	void Imprimir();
+
+	
 
 };
 

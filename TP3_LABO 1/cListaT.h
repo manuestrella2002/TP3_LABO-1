@@ -21,7 +21,6 @@ public:
 	~cListaT();
 
 	bool AgregarItem(T* item);
-	bool AgregarItemOrdenado( T* item);
 
 	T* Quitar(string clave);
 	T* Quitar( T* item);
@@ -116,18 +115,8 @@ bool cListaT<T>::AgregarItem(T* item)
 	else throw new exception("No hay tamaño suficiente para agregar el item");;
 	return true;
 }
-template<class T>
 
-bool cListaT<T>::AgregarItemOrdenado( T* item)
-{
-	/*for (unsigned int i = 0; i < CA; i++)
-	{
-	if (vector[i]->getclave() == clave)
-	return vector[i];
-	}
-	*/
-	return false;
-}
+
 template<class T>
 T* cListaT<T>::Quitar(string clave) {
 
@@ -192,7 +181,7 @@ void cListaT<T>::Eliminar(unsigned int pos) {
 template<class T>
 T* cListaT<T>::BuscarItem(string clave)
 {
-	for ( int i = 0; i < CA; i++)
+	for (int i = 0; i < CA; i++)
 	{
 		if (vector[i]->getclave() == clave)
 			return vector[i];

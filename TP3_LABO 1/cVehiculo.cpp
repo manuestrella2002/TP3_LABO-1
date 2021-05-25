@@ -28,19 +28,12 @@ void cVehiculo::PasosMantenimiento()
 	cout << "3)Revision de componentes por el mecanico" << endl;
 }
 
-tm* cVehiculo::CrearFecha()
+void cVehiculo::Imprimir()
 {
-	time_t aux = time(NULL);
-	time_t* aux1 = &aux;
-	tm* aux_dia;
-	aux_dia = localtime(aux1);
-	return aux_dia;
+	cout << To_String() << endl;
 }
 
 string cVehiculo::To_String()
 {
 	return string();
-}
-void cVehiculo::Imprimir()
-{
 }

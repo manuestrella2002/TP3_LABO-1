@@ -11,8 +11,8 @@ public:
 
 	int GetSillas();
 	int GetAsientos();
-	string To_String();
-	void Imprimir();
+	virtual string To_String();
+	virtual void Imprimir();
 
 	friend class cAlquiler;
 

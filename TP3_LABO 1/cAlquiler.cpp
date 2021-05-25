@@ -13,6 +13,8 @@ cAlquiler::cAlquiler(cVehiculo* vehiculo_, string codigo,cCliente* cliente_, tm*
 	precio_portaequipaje = 30;
 	precio_ss = 50;
 	Monto_Total = CalularMonto();
+	
+	
 
 }
 
@@ -27,6 +29,7 @@ string cAlquiler::getclave()
 
 float cAlquiler::CalularMonto()
 {
+	float aux;
 	//tendriamos que hacer el dynamic cast, y en cada caso ver que auxiliar usa para calcular 
 	//el monto final de cada vehiculo en especifico + el monto del adicional
 	//eso multiplicado los dias de alquiler
@@ -34,21 +37,28 @@ float cAlquiler::CalularMonto()
 	//ya tenemos una tarifa por dia en vehiculo, no se como usar ambas 
 		if (cAutomovil* Auto = dynamic_cast<cAutomovil*>(Vehiculo))
 		{ 
-			return (Auto->Tarifa_base)+Auto->Tarifa_por_dia*dias_alquiler + precio_ss * Auto->sillas_seguridad * dias_alquiler;
+			aux=(Auto->Tarifa_base) + Auto->Tarifa_por_dia * dias_alquiler + precio_ss * Auto->sillas_seguridad * dias_alquiler;
+			Auto->Monto_Total1 = aux;
+			return aux;
 		}
 		else if (cCamioneta* Camioneta = dynamic_cast<cCamioneta*>(Vehiculo))
 		{ 
-			return (Camioneta->Tarifa_base) + Camioneta->Tarifa_por_dia * dias_alquiler + precio_ss * Camioneta->sillas_seguridad * dias_alquiler+ precio_portaequipaje*Camioneta->portaequipaje*dias_alquiler;
+			aux= (Camioneta->Tarifa_base) + Camioneta->Tarifa_por_dia * dias_alquiler + precio_ss * Camioneta->sillas_seguridad * dias_alquiler + precio_portaequipaje * Camioneta->portaequipaje * dias_alquiler;
+			Camioneta->Monto_Total1 = aux;
+			return aux;
 		}
 		else if (cTraffic* Traffic = dynamic_cast<cTraffic*>(Vehiculo))
 		{
-			return (Traffic->Tarifa_base) + Traffic->Tarifa_por_dia * dias_alquiler + precio_ss * Cant_silla_seguridad * dias_alquiler;
+			aux=(Traffic->Tarifa_base) + Traffic->Tarifa_por_dia * dias_alquiler + precio_ss * Cant_silla_seguridad * dias_alquiler;
+			Traffic->Monto_Total1 = aux;
+			return aux;;
 
 		}
 		else if (cMotocicleta* Moto = dynamic_cast<cMotocicleta*>(Vehiculo))
 		{
-			return (Moto->Tarifa_base) + Moto->Tarifa_por_dia * dias_alquiler + precio_ss * Cant_silla_seguridad * dias_alquiler;
-
+			aux=(Moto->Tarifa_base) + Moto->Tarifa_por_dia * dias_alquiler + precio_ss * Cant_silla_seguridad * dias_alquiler;
+			Moto->Monto_Total1 = aux;
+			return aux;
 		}
 	
 	return 0;
@@ -77,6 +87,16 @@ string cAlquiler::To_String()
 		+ "\n Fecha devolucion: " + to_string(Fecha_Fin.tm_wday) + "/" + to_string(Fecha_Fin.tm_mon) + "/" + to_string(Fecha_Fin.tm_year)
 		+ "\nMonto total: " + to_string(Monto_Total);
 	return cadena;
+	*/
+}
+
+void cAlquiler::CalcularFechaFin()
+{
+	/*
+	tm* aux;
+	tm* aux2;
+	aux->tm_mday += dias_alquiler;
+	aux2 = *Fecha_Inicio + *aux;
 	*/
 }
 

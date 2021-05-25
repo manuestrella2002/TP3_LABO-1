@@ -18,7 +18,7 @@ int cMotocicleta::GetCascos()
 
 void cMotocicleta::Imprimir()
 {
-	cout << To_String() << endl;
+	cVehiculo::Imprimir();
 }
 
 string cMotocicleta::To_String()

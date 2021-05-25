@@ -8,7 +8,7 @@
 using namespace std;
 class cEmpresa
 {
-	
+protected:
 	string Direccion;
 	string Nombre;
 	cListaT <cAlquiler>* ListaAlquileres;

@@ -13,10 +13,12 @@ int cAutomovil::Get_sillas()
 {
 	return sillas_seguridad;
 }
+
 void cAutomovil::Imprimir()
 {
-	cout << To_String() << endl;
+	cVehiculo::Imprimir();
 }
+
 string cAutomovil::To_String()
 {
 	char buffer1[80];

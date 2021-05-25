@@ -9,8 +9,8 @@ public:
 	~cMotocicleta();
 
 	int GetCascos();
-	void Imprimir();
-	string To_String();
+	virtual void Imprimir();
+	virtual string To_String();
 	friend class cAlquiler;
 
 };

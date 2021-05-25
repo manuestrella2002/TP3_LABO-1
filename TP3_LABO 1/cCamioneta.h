@@ -1,5 +1,4 @@
 #pragma once
-#include<string>
 #include "cVehiculo.h"
 class cCamioneta : public cVehiculo
 {
@@ -12,8 +11,8 @@ public:
 
 	int Get_sillas();
 	int GetPortaequipaje();
-	void Imprimir();
-	string To_String();
+	virtual void Imprimir();
+	virtual string To_String();
 	friend class cAlquiler;
 	friend class cAlquiler;
 

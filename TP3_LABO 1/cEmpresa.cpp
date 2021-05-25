@@ -4,7 +4,10 @@ cEmpresa::cEmpresa(string nom, string direccion_)
 {
 	Nombre = nom;
 	Direccion = direccion_;
-	
+	//Habia que iniciar las listas en el constructor
+	ListaVehiculos = new cListaT<cVehiculo>;
+	ListaAlquileres = new cListaT<cAlquiler>;
+	ListaClientes = new cListaT<cCliente>;
 }
 
 cEmpresa::~cEmpresa()
@@ -19,7 +22,7 @@ void cEmpresa::RegistrarCliente(cCliente* Cliente)
 
 void cEmpresa::AdquirirVehiculo(cVehiculo* Vehiculo)
 {
-	(*ListaVehiculos) + Vehiculo;
+	ListaVehiculos->AgregarItem(Vehiculo);
 }
 
 void cEmpresa::RealizarMantenimiento(cVehiculo* Vehiculo)
@@ -43,7 +46,7 @@ void cEmpresa::RegistarAlquiler(cAlquiler* Alquiler)
 
 string cEmpresa::To_String()
 {
-	string cadena = "\nEMPRESA:\nNombre: " + Nombre + "\Direccion: " + Direccion;
+	string cadena = "\nEMPRESA:\nNombre: " + Nombre + "\nDireccion: " + Direccion;
 	//las listas no porque ya se imprimen(?
 	return cadena;
 }
