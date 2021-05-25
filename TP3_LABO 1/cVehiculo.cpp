@@ -8,7 +8,7 @@ cVehiculo::cVehiculo(string patente_, string color_, string Num_chasis, string p
 	Poliza = poliza_;
 	Tarifa_base = 300;
 	
-	Fecha_ult_mant = CrearFecha();
+	Fecha_ult_mant = NULL;
 }
 
 cVehiculo::~cVehiculo()

@@ -214,7 +214,6 @@ T* cListaT<T>::operator[](int pos)
 	if (pos < CA)
 		return vector[pos];
 	else return NULL;
-
 }
 
 template<class T>

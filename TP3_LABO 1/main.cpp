@@ -53,7 +53,7 @@ int main()
 	Auto1->Imprimir();
 	Camioneta1->Imprimir();
 
-	//Alquiler1->Imprimir(); //NO SE PUEDE IMPRIMIR HASTA HACER FUNCION QUE SUME DIAS A LA FECHA DE INICIO
+	Alquiler1->Imprimir(); //NO SE PUEDE IMPRIMIR HASTA HACER FUNCION QUE SUME DIAS A LA FECHA DE INICIO
 	
 	Lista->Listar_por_Vehiculo();
 	

@@ -13,9 +13,8 @@ cAlquiler::cAlquiler(cVehiculo* vehiculo_, string codigo,cCliente* cliente_, tm*
 	precio_portaequipaje = 30;
 	precio_ss = 50;
 	Monto_Total = CalularMonto();
-	
-	
-
+	//Calculamos fecha final con la fecha de inicio mas los dias de alquiler
+	 CalcularFechaFin();
 }
 
 cAlquiler::~cAlquiler()
@@ -98,6 +97,18 @@ void cAlquiler::CalcularFechaFin()
 	aux->tm_mday += dias_alquiler;
 	aux2 = *Fecha_Inicio + *aux;
 	*/
+	time_t aux = time(NULL);
+
+	Fecha_Fin = Fecha_Inicio;
+	tm* aux3 = Fecha_Inicio;
+	aux3->tm_mday = Fecha_Inicio->tm_mday + dias_alquiler;
+	Fecha_Fin = aux3;
+
+	aux= mktime(Fecha_Fin);
+
+	time_t* aux1 = &aux;
+	Fecha_Fin = localtime(aux1);
+
 }
 
 void cAlquiler::Imprimir()
