@@ -2,6 +2,7 @@
 #include <iostream>
 #include<string>
 #include <ctime>
+#include "time.h"
 using namespace std;
 template<class cVehiculo>class cListaT;
 
@@ -20,14 +21,12 @@ protected:
 public:
 	cVehiculo(string patente_, string color_, string Num_chasis, string poliza_);
 	~cVehiculo();
-	string getclave();
+	virtual string getclave();
 
 	void PasosMantenimiento();
-	/*
-	void CalcularMonto();
-	float GetMontoT();
-	*/
-	virtual void Imprimir();
+	tm* CrearFecha();
+	
+	virtual void Imprimir() =0;
 	virtual string To_String() = 0;
 
 	friend class cEmpresa;

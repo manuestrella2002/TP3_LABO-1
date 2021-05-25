@@ -17,3 +17,4 @@ public:
 	string To_String();
 	friend class cAlquiler;
 };
+

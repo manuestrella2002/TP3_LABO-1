@@ -34,4 +34,5 @@ string cTraffic::To_String()
 
 void cTraffic::Imprimir()
 {
+	cout << To_String() << endl;
 }

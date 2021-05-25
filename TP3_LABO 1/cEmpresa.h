@@ -28,8 +28,6 @@ public:
 	string To_String();
 	void Imprimir();
 
-	
-
-
+	friend ostream& operator << (ostream& out, const cEmpresa& e);
 };
 

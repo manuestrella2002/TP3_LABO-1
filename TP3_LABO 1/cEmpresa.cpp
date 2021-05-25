@@ -4,6 +4,7 @@ cEmpresa::cEmpresa(string nom, string direccion_)
 {
 	Nombre = nom;
 	Direccion = direccion_;
+	
 }
 
 cEmpresa::~cEmpresa()
@@ -12,12 +13,13 @@ cEmpresa::~cEmpresa()
 
 void cEmpresa::RegistrarCliente(cCliente* Cliente)
 {
-	ListaClientes->AgregarItem(Cliente);
+	(*ListaClientes) + Cliente;
+	//las sobrecargas del opertor +
 }
 
 void cEmpresa::AdquirirVehiculo(cVehiculo* Vehiculo)
 {
-	ListaVehiculos->AgregarItem(Vehiculo);
+	(*ListaVehiculos) + Vehiculo;
 }
 
 void cEmpresa::RealizarMantenimiento(cVehiculo* Vehiculo)
@@ -36,7 +38,7 @@ void cEmpresa::RetirarVehiculo(cVehiculo* Vehiculo)
 
 void cEmpresa::RegistarAlquiler(cAlquiler* Alquiler)
 {
-	ListaAlquileres->AgregarItem(Alquiler);
+	(*ListaAlquileres) + Alquiler;
 }
 
 string cEmpresa::To_String()
@@ -49,4 +51,15 @@ string cEmpresa::To_String()
 void cEmpresa::Imprimir()
 {
 	cout << To_String() << endl;
+}
+
+ostream& operator<<(ostream& out, const cEmpresa& e)
+{
+	cout << "\nEMPRESA: " << endl;
+	cout << "Nombre: " << e.Nombre << endl;
+	cout << "Direccion: " << e.Direccion << endl;
+	cout << e.ListaAlquileres << endl;
+	cout << e.ListaClientes << endl;
+	cout << e.ListaVehiculos << endl;
+	return out;
 }

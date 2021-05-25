@@ -41,9 +41,11 @@ public:
 	unsigned int getTAM();
 
 	T* operator[](int pos);
-	void operator << (T* item);
+
 	void operator + (T* item);
 };
+
+
 
 template<class T>
 unsigned int cListaT<T>::getTAM()
@@ -111,7 +113,7 @@ bool cListaT<T>::AgregarItem(T* item)
 
 	if (CA < TAM)
 		vector[CA++] = item;
-	else throw new exception("No hay tama?o suficiente para agregar el item");;
+	else throw new exception("No hay tamaño suficiente para agregar el item");;
 	return true;
 }
 template<class T>
@@ -190,7 +192,7 @@ void cListaT<T>::Eliminar(unsigned int pos) {
 template<class T>
 T* cListaT<T>::BuscarItem(string clave)
 {
-	for (unsigned int i = 0; i < CA; i++)
+	for ( int i = 0; i < CA; i++)
 	{
 		if (vector[i]->getclave() == clave)
 			return vector[i];
@@ -216,8 +218,9 @@ unsigned int cListaT<T>::getItemPos(string clave)
 
 	return INT_MAX;
 }
+//este lo podemos usar para cuando tengamos que buscar de la lista heredada
 template <class T>
-T* cListaT<T>::operator[](int pos)
+T* cListaT<T>::operator[](int pos) 
 {
 	if (pos < CA)
 		return vector[pos];
@@ -226,14 +229,8 @@ T* cListaT<T>::operator[](int pos)
 }
 
 template<class T>
-inline void cListaT<T>::operator<<(T* item)
-{
-	Eliminar(item->getNombre());
-}
-
-template<class T>
 inline void cListaT<T>::operator+(T* item)
 {
-	Agregar(item);
+	AgregarItem(item);
 }
 

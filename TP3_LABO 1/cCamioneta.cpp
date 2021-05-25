@@ -24,7 +24,7 @@ int cCamioneta::GetPortaequipaje()
 
 void cCamioneta::Imprimir()
 {
-
+	cout << To_String() << endl;
 }
 
 string cCamioneta::To_String()
