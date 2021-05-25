@@ -14,7 +14,7 @@ cAlquiler::cAlquiler(cVehiculo* vehiculo_, string codigo,cCliente* cliente_, tm*
 	precio_ss = 50;
 	Monto_Total = CalularMonto();
 	//Calculamos fecha final con la fecha de inicio mas los dias de alquiler
-	 CalcularFechaFin();
+	Fecha_Fin=CalcularFechaFin();
 }
 
 cAlquiler::~cAlquiler()
@@ -29,11 +29,8 @@ string cAlquiler::getclave()
 float cAlquiler::CalularMonto()
 {
 	float aux;
-	//tendriamos que hacer el dynamic cast, y en cada caso ver que auxiliar usa para calcular 
-	//el monto final de cada vehiculo en especifico + el monto del adicional
-	//eso multiplicado los dias de alquiler
-	//(Vehiculoespecifico).Getmonto() + tarifadicional
-	//ya tenemos una tarifa por dia en vehiculo, no se como usar ambas 
+		//Utilizamos dinamic cast para ver de que tipo de clase era cada vehiculo 
+		//ya que tiene diferentes adicionales cada uno
 		if (cAutomovil* Auto = dynamic_cast<cAutomovil*>(Vehiculo))
 		{ 
 			aux=(Auto->Tarifa_base) + Auto->Tarifa_por_dia * dias_alquiler + precio_ss * Auto->sillas_seguridad * dias_alquiler;
@@ -73,6 +70,7 @@ string cAlquiler::To_String()
 	strftime(buffer2, 80, "%D", Fecha_Fin);
 	
 	cadena = "\n\tALQUILER" + Cliente->To_String() +"\nFecha de inicio del alquiler: " + buffer1 + "\n Fecha devolucion: " +buffer2+ "\nMonto Total:" + to_string(Monto_Total) + "\nArticulos alquilados:"
+		+"\nDias Alquiler:"+to_string(dias_alquiler)
 		+ "\nAsientos Rebatibles:" + to_string(Cant_asiento_rebatible)
 		+ "\nCascos:" + to_string(Cant_cascos)
 		+ "\nPortaequipajes:" + to_string(Cant_portaequipaje)
@@ -80,23 +78,12 @@ string cAlquiler::To_String()
 	
 	return cadena;
 
-	/*
-	string cadena = "\nALQUILER:\nTipo de vehiculo: " + Vehiculo->To_String() + "\nCliente: " + Cliente->To_String()
-		+ "\nFecha de inicio del alquiler: " + to_string(Fecha_Inicio.tm_wday) + "/" + to_string(Fecha_Inicio.tm_mon) + "/" + to_string(Fecha_Inicio.tm_year)
-		+ "\n Fecha devolucion: " + to_string(Fecha_Fin.tm_wday) + "/" + to_string(Fecha_Fin.tm_mon) + "/" + to_string(Fecha_Fin.tm_year)
-		+ "\nMonto total: " + to_string(Monto_Total);
-	return cadena;
-	*/
-}
 
-void cAlquiler::CalcularFechaFin()
+}
+//Sumamos dias de alquiler a fecha inicio para obtener fecha fin
+tm* cAlquiler::CalcularFechaFin()
 {
-	/*
-	tm* aux;
-	tm* aux2;
-	aux->tm_mday += dias_alquiler;
-	aux2 = *Fecha_Inicio + *aux;
-	*/
+
 	time_t aux = time(NULL);
 
 	Fecha_Fin = Fecha_Inicio;
@@ -108,6 +95,7 @@ void cAlquiler::CalcularFechaFin()
 
 	time_t* aux1 = &aux;
 	Fecha_Fin = localtime(aux1);
+	return Fecha_Fin;
 
 }
 

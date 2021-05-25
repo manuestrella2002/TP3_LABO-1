@@ -16,13 +16,12 @@ cEmpresa::~cEmpresa()
 
 void cEmpresa::RegistrarCliente(cCliente* Cliente)
 {
-	(*ListaClientes) + Cliente;
-	//las sobrecargas del opertor +
+	(*ListaClientes) + Cliente;//Se agregan cliente a la lista de clientes
 }
 
 void cEmpresa::AdquirirVehiculo(cVehiculo* Vehiculo)
 {
-	ListaVehiculos->AgregarItem(Vehiculo);
+	(*ListaVehiculos) + Vehiculo;//Se agregan vehiculo a la lista de vehiculos
 }
 
 void cEmpresa::RealizarMantenimiento(cVehiculo* Vehiculo)
@@ -41,13 +40,12 @@ void cEmpresa::RetirarVehiculo(cVehiculo* Vehiculo)
 
 void cEmpresa::RegistarAlquiler(cAlquiler* Alquiler)
 {
-	(*ListaAlquileres) + Alquiler;
+	(*ListaAlquileres) + Alquiler;//Se agregan Alquiler a la lista de Alquileres
 }
 
 string cEmpresa::To_String()
 {
 	string cadena = "\nEMPRESA:\nNombre: " + Nombre + "\nDireccion: " + Direccion;
-	//las listas no porque ya se imprimen(?
 	return cadena;
 }
 

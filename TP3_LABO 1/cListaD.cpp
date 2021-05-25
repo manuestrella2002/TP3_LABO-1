@@ -9,6 +9,7 @@ cListaD::~cListaD()
 
 void cListaD::Listar_por_Vehiculo()
 {
+	//Se utiliza dynamic cast y se recorre cuatro veces la lista para imprimir por tipo de vehiuclo
 	cout << "\nLISTA DE VEHICULOS POR CATEGORIA" << endl;
 	cout << "\nAUTOS-------------------------------" << endl;
 		for (int i = 0; i < CA; i++)

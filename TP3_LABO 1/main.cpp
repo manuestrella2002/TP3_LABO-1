@@ -13,6 +13,7 @@ int main()
 	time_t* aux1 = &aux;
 	tm* aux_dia;
 	aux_dia = localtime(aux1);
+	
 	cEmpresa* Empresa = new cEmpresa("Concesionaria", "Av. Predro Luro");
 
 	
@@ -48,12 +49,11 @@ int main()
 
 	Empresa->RealizarMantenimiento(Auto1);
 	Empresa->RealizarMantenimiento(Camioneta1);
-	//PARA IMPRIMIR CUALQUIER AUTO SE DEBE REALIZAR EL MANTENIMIENTO PRIMERO PORQUE SINO EL PUNTERO
-	//FECHA_ULT_MAN QUEDA NULL
+	//PARA IMPRIMIR CUALQUIER AUTO SE DEBE REALIZAR EL MANTENIMIENTO PRIMERO
 	Auto1->Imprimir();
 	Camioneta1->Imprimir();
 
-	Alquiler1->Imprimir(); //NO SE PUEDE IMPRIMIR HASTA HACER FUNCION QUE SUME DIAS A LA FECHA DE INICIO
+	Alquiler1->Imprimir(); 
 	
 	Lista->Listar_por_Vehiculo();
 	

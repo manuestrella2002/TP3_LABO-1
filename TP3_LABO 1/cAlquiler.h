@@ -32,7 +32,7 @@ public:
 	float CalularMonto();
 	string To_String();
 
-	void CalcularFechaFin();
+	tm* CalcularFechaFin();
 
 	void Imprimir();
 
