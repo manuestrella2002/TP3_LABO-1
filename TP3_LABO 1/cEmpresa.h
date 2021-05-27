@@ -25,9 +25,6 @@ public:
 	void RetirarVehiculo(cVehiculo* Vehiculo);
 	void RegistarAlquiler(cAlquiler* Alquiler);
 
-	string To_String();
-	void Imprimir();
-
 	friend ostream& operator << (ostream& out, const cEmpresa& e);
 };
 

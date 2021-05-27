@@ -3,7 +3,6 @@
 
 class cListaD : public cListaT<class cVehiculo>
 {
-
 public:
 	cListaD(unsigned int TAM=NMAX);
 	~cListaD();

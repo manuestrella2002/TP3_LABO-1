@@ -62,3 +62,6 @@ float cListaD::Ganancia_Total()
 
 	return acum;
 }
+
+
+

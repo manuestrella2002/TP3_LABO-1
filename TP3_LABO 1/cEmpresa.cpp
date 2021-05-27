@@ -43,20 +43,9 @@ void cEmpresa::RegistarAlquiler(cAlquiler* Alquiler)
 	(*ListaAlquileres) + Alquiler;//Se agregan Alquiler a la lista de Alquileres
 }
 
-string cEmpresa::To_String()
-{
-	string cadena = "\nEMPRESA:\nNombre: " + Nombre + "\nDireccion: " + Direccion;
-	return cadena;
-}
-
-void cEmpresa::Imprimir()
-{
-	cout << To_String() << endl;
-}
-
 ostream& operator<<(ostream& out, const cEmpresa& e)
 {
-	cout << "\nEMPRESA: " << endl;
+	cout << "\n\nEMPRESA: " << endl;
 	cout << "Nombre: " << e.Nombre << endl;
 	cout << "Direccion: " << e.Direccion << endl;
 	cout << e.ListaAlquileres << endl;

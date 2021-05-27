@@ -39,7 +39,7 @@ public:
 	unsigned int getCA();
 	unsigned int getTAM();
 
-	T* operator[](int pos);
+	T* operator[](unsigned int pos);
 
 	void operator + (T* item);
 };
@@ -66,7 +66,7 @@ void cListaT<T>::Redimensionalizar()
 template<class T>
 cListaT<T>::cListaT(unsigned int TAM)
 {
-	vector = new T * [TAM];
+	vector = new T *[TAM];
 	for (unsigned int i = 0; i < TAM; i++)
 	{
 		vector[i] = NULL;
@@ -120,6 +120,7 @@ bool cListaT<T>::AgregarItem(T* item)
 template<class T>
 T* cListaT<T>::Quitar(string clave) {
 
+	
 	unsigned int pos = getItemPos(clave);
 	if (pos >= CA)return NULL;
 	return QuitarenPos(pos);
@@ -207,13 +208,10 @@ unsigned int cListaT<T>::getItemPos(string clave)
 
 	return INT_MAX;
 }
-//este lo podemos usar para cuando tengamos que buscar de la lista heredada
 template <class T>
-T* cListaT<T>::operator[](int pos) 
+T* cListaT<T>::operator[](unsigned int pos) 
 {
-	if (pos < CA)
-		return vector[pos];
-	else return NULL;
+	return getItem(pos);
 }
 
 template<class T>

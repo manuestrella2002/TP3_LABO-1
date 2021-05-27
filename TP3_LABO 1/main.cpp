@@ -32,8 +32,12 @@ int main()
 
 	cListaD* Lista = new cListaD();
 	
-	Lista->AgregarItem(Auto1);
-	Lista->AgregarItem(Camioneta1);
+	//Lista->AgregarItem(Auto1);
+	(*Lista) + Auto1;
+	(*Lista) + Auto2;
+	//Lista->AgregarItem(Camioneta1);
+	(*Lista) + Camioneta1;
+	(*Lista) + Traffic1;
 	
 	Empresa->AdquirirVehiculo(Auto1);
 	Empresa->AdquirirVehiculo(Auto2);
@@ -48,18 +52,26 @@ int main()
 	Empresa->RegistarAlquiler(Alquiler2);
 
 	Empresa->RealizarMantenimiento(Auto1);
+	Empresa->RealizarMantenimiento(Auto2);
 	Empresa->RealizarMantenimiento(Camioneta1);
+	Empresa->RealizarMantenimiento(Traffic1);
+	
 	//PARA IMPRIMIR CUALQUIER AUTO SE DEBE REALIZAR EL MANTENIMIENTO PRIMERO
 	Auto1->Imprimir();
+	Auto2->Imprimir();
 	Camioneta1->Imprimir();
+	Traffic1->Imprimir();
+
 
 	Alquiler1->Imprimir(); 
 	
 	Lista->Listar_por_Vehiculo();
 	
-	printf("%f", Lista->Ganancia_Total());
+	printf("\nEl monto total de ganancia es: $%.2f", Lista->Ganancia_Total());
 
-	cout << Empresa;
+	//sobrecarga del cout
+	cout << (*Empresa);
+
 
 	system("Pause");
 	return 0;
